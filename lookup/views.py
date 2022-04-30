@@ -7,7 +7,8 @@ import requests
 # Create your views here.
 def home(request):
     # key: 12678f1a5ce946ba929185409223004
-    api_request = requests.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=12678f1a5ce946ba929185409223004&q=Tehran&fx=no&cc=no&mca=yes&format=json")  
+    city = "Semnan"
+    api_request = requests.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=12678f1a5ce946ba929185409223004&q={}&fx=no&cc=no&mca=yes&format=json".format(city))  
     try:
         api = json.loads(api_request.content)
     except Exception as e:
