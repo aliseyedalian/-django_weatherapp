@@ -1,3 +1,4 @@
+# this is the brain(backend) of our website!
 from django.shortcuts import render
 from django.http import FileResponse
 import os
@@ -6,8 +7,14 @@ import requests
 
 # Create your views here.
 def home(request):
-    # key: 12678f1a5ce946ba929185409223004
-    city = "Tehran"
+    # key: 12678f1a5ce946ba929185409223004 
+    if request.method == "POST":
+        city = request.POST['city']
+        if city == "":
+            city = "Tehran"
+    else: # method is GET
+        city = "Tehran"
+
     api_request = requests.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=12678f1a5ce946ba929185409223004&q={}&fx=no&cc=no&mca=yes&format=json".format(city))  
     try:
         api = json.loads(api_request.content)
