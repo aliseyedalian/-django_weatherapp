@@ -7,21 +7,106 @@ Home
 
 {% block container %}
 <div>
-    <h1>Climate Averages</h1><br/>
-    <h2>City : {{ api.data.request.0.query }}</h2> <br/>
-    <h3>January:</h3> {{ api.data.ClimateAverages.0.month.0 }}<br/>
-    <h3>February:</h3> {{ api.data.ClimateAverages.0.month.1 }}<br/>
-    <h3>March:</h3> {{ api.data.ClimateAverages.0.month.2 }}<br/>
-    <h3>April:</h3> {{ api.data.ClimateAverages.0.month.3 }}<br/>
-    <h3>May:</h3> {{ api.data.ClimateAverages.0.month.4 }}<br/>
-    <h3>June:</h3> {{ api.data.ClimateAverages.0.month.5 }}<br/>
-    <h3>July:</h3> {{ api.data.ClimateAverages.0.month.6 }}<br/>
-    <h3>August:</h3> {{ api.data.ClimateAverages.0.month.7 }}<br/>
-    <h3>September:</h3> {{ api.data.ClimateAverages.0.month.8 }}<br/>
-    <h3>October:</h3> {{ api.data.ClimateAverages.0.month.9 }}<br/>
-    <h3>November:</h3> {{ api.data.ClimateAverages.0.month.10 }}<br/>
-    <h3>December:</h3> {{ api.data.ClimateAverages.0.month.11 }}<br/>
+    <h1 class="display-6">Climate Averages of {{ api.data.request.0.query }}</h1><br/>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Month</th>
+            <th scope="col">Min Temp</th>
+            <th scope="col">Max Temp</th>
+            <th scope="col">Daily Rainfall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ api.data.ClimateAverages.0.month.0.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.0.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.0.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.0.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>{{ api.data.ClimateAverages.0.month.1.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.1.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.1.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.1.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>{{ api.data.ClimateAverages.0.month.2.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.2.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.2.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.2.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>{{ api.data.ClimateAverages.0.month.3.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.3.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.3.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.3.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>{{ api.data.ClimateAverages.0.month.4.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.4.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.4.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.4.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>{{ api.data.ClimateAverages.0.month.5.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.5.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.5.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.5.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>{{ api.data.ClimateAverages.0.month.6.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.6.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.6.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.6.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>{{ api.data.ClimateAverages.0.month.7.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.7.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.7.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.7.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>{{ api.data.ClimateAverages.0.month.8.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.8.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.8.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.8.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>{{ api.data.ClimateAverages.0.month.9.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.9.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.9.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.9.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>{{ api.data.ClimateAverages.0.month.10.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.10.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.10.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.10.avgDailyRainfall }}</td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>{{ api.data.ClimateAverages.0.month.11.name }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.11.avgMinTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.11.absMaxTemp }}</td>
+            <td>{{ api.data.ClimateAverages.0.month.11.avgDailyRainfall }}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
+
 {% endblock container %}
 
 
